@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>수달 백업 아카이브</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🦦 수달 백업 아카이브</h1>
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="artists">작가 아카이브</button>
+    <button class="tab-btn" data-tab="posts">전시회</button>
+  </nav>
+</header>
+
+<main>
+  <!-- 작가 섹션 -->
+  <section id="artists" class="tab-panel active">
+    <div class="toolbar">
+      <input type="search" id="artist-search" placeholder="작가명, 코멘트 검색…">
+      <div id="artist-tag-filter" class="tag-filter"></div>
+      <div class="count"><span id="artist-count">0</span>명</div>
+    </div>
+    <div id="artist-grid" class="grid"></div>
+  </section>
+
+  <!-- 전시회 섹션 -->
+  <section id="posts" class="tab-panel">
+    <div class="toolbar">
+      <input type="search" id="post-search" placeholder="제목, 내용 검색…">
+      <div class="count"><span id="post-count">0</span>개</div>
+    </div>
+    <div id="post-grid" class="grid"></div>
+  </section>
+</main>
+
+<!-- 상세 모달 -->
+<div id="modal" class="modal hidden">
+  <div class="modal-bg"></div>
+  <div class="modal-content">
+    <button class="modal-close">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- 라이트박스 -->
+<div id="lightbox" class="lightbox hidden">
+  <button class="lb-close">✕</button>
+  <button class="lb-prev">‹</button>
+  <button class="lb-next">›</button>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-counter"><span id="lb-current">1</span> / <span id="lb-total">1</span></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
