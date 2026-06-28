@@ -1,3 +1,29 @@
+// ===== 비번 게이트 =====
+const SITE_PASSWORD = "ridal0512";  // 비번 변경시 이 줄만 수정
+const gate = document.getElementById('gate');
+const gateInput = document.getElementById('gate-input');
+const gateBtn = document.getElementById('gate-btn');
+const gateError = document.getElementById('gate-error');
+
+function checkGate() {
+  if (sessionStorage.getItem('sudal_unlocked') === '1') {
+    gate.classList.add('hidden');
+  }
+}
+function tryUnlock() {
+  if (gateInput.value === SITE_PASSWORD) {
+    sessionStorage.setItem('sudal_unlocked', '1');
+    gate.classList.add('hidden');
+    gateError.textContent = '';
+  } else {
+    gateError.textContent = '비밀번호가 틀렸어요';
+    gateInput.value = '';
+  }
+}
+gateBtn.addEventListener('click', tryUnlock);
+gateInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+checkGate();
+
 // ===== 데이터 로드 =====
 const POSTS = window.SUDAL_POSTS || [];
 const ARTISTS = window.SUDAL_ARTISTS || [];
