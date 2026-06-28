@@ -1,5 +1,5 @@
 // ===== 비번 게이트 =====
-const SITE_PASSWORD = "ridal0512";  // 비번 변경시 이 줄만 수정
+const SITE_PASSWORD = "ridal0629";  // 비번 변경시 이 줄만 수정
 const gate = document.getElementById('gate');
 const gateInput = document.getElementById('gate-input');
 const gateBtn = document.getElementById('gate-btn');
