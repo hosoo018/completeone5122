@@ -394,3 +394,121 @@ main {
   .modal-content { padding: 20px; }
   .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 }
+
+/* ===== 전시회 동적 기능 추가 스타일 (기존 style.css 맨 끝에 붙이세요) ===== */
+
+.new-post-btn {
+  background: var(--fg);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.new-post-btn:hover { opacity: 0.85; }
+
+.post-loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--muted);
+}
+
+/* 폼 필드 */
+.form-field { margin-top: 16px; }
+.form-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--card-bg);
+  color: var(--fg);
+}
+.form-field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--fg);
+}
+.form-hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* 폼 액션 버튼 */
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+.btn-primary {
+  background: var(--fg);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-primary:hover { opacity: 0.85; }
+.btn-primary:disabled { opacity: 0.5; cursor: default; }
+
+.btn-ghost {
+  background: var(--card-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-ghost:hover { background: var(--hover); }
+
+.btn-danger {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-danger:hover { opacity: 0.85; }
+
+.form-error {
+  color: #d32f2f;
+  font-size: 13px;
+  margin-top: 12px;
+  min-height: 18px;
+}
+
+/* 상세 모달 하단 수정/삭제 버튼 영역 */
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}

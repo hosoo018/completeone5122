@@ -31,8 +31,10 @@
     <div class="toolbar">
       <input type="search" id="post-search" placeholder="제목, 내용 검색…">
       <div class="count"><span id="post-count">0</span>개</div>
+      <button class="new-post-btn" id="new-post-btn">+ 새 글</button>
     </div>
     <div id="post-grid" class="grid"></div>
+    <div id="post-loading" class="post-loading">불러오는 중…</div>
   </section>
 </main>
 
@@ -42,6 +44,48 @@
   <div class="modal-content">
     <button class="modal-close">✕</button>
     <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- 전시회 작성/수정 폼 모달 -->
+<div id="post-form-modal" class="modal hidden">
+  <div class="modal-bg" data-close-form></div>
+  <div class="modal-content">
+    <button class="modal-close" data-close-form>✕</button>
+    <h2 id="post-form-title">새 글 작성</h2>
+    <div class="form-field">
+      <label>제목 *</label>
+      <input type="text" id="pf-title" placeholder="제목">
+    </div>
+    <div class="form-field">
+      <label>닉네임</label>
+      <input type="text" id="pf-nickname" placeholder="닉네임">
+    </div>
+    <div class="form-field">
+      <label>사진 첨부</label>
+      <input type="file" id="pf-files" accept="image/*" multiple>
+      <div class="form-hint">여러 장 선택 가능. 선택하면 자동 업로드돼요.</div>
+      <div id="pf-upload-status" class="form-hint"></div>
+      <div id="pf-preview" class="image-grid" style="margin-top:10px"></div>
+    </div>
+    <div class="form-field">
+      <label>태그 / 프롬프트</label>
+      <textarea id="pf-tags" placeholder="[Artist]... [Positive]... [Negative]..."></textarea>
+    </div>
+    <div class="form-field">
+      <label>메모</label>
+      <input type="text" id="pf-memo" placeholder="메모 (선택)">
+    </div>
+    <div class="form-field">
+      <label id="pf-pw-label">비밀번호 * (나중에 수정/삭제할 때 필요)</label>
+      <input type="password" id="pf-pw" placeholder="비밀번호">
+      <div class="form-hint" id="pf-pw-hint">이 비번을 알아야 나중에 이 글을 수정/삭제할 수 있어요.</div>
+    </div>
+    <div class="form-actions">
+      <button class="btn-primary" id="pf-submit">저장</button>
+      <button class="btn-ghost" data-close-form>취소</button>
+    </div>
+    <div class="form-error" id="pf-error"></div>
   </div>
 </div>
 
@@ -66,6 +110,7 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>
